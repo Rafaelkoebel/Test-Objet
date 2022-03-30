@@ -8,6 +8,13 @@ class User{
     private $actif;
 
     //methodes
+    public function __construct($pseudo, $email, $signature){
+        $this->pseudo = $pseudo;
+        $this->email = $email;
+        $this->signature = $signature;
+        $this->actif = true;
+        //echo "construct";
+    }
     public function getPseudo()
     {
         return $this->pseudo;
@@ -37,6 +44,11 @@ class User{
         else{
             echo"<p>Email vide ou trop long</p>";
         }
+    }
+
+    public function bloquer(){
+        $this->actif = false;
+        $this->envoyerEmail("Alerte User", "Vous etes bloqué");
     }
 
 }
