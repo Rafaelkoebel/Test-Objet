@@ -22,22 +22,25 @@
         $user3->setPseudo("Dubois");
         $user4->setPseudo("Bonjour");
         $user1->envoyerEmail("Le titre", "Le texte du mail");
-        var_dump($user1);
+        //var_dump($user1);
 
-        $user1->bloquer();
+        //$user1->bloquer();
 
-        var_dump($user1);
-        var_dump($user2);
-        var_dump($user3);
-        var_dump($user4);
+        //var_dump($user1);
+        //var_dump($user2);
+        //var_dump($user3);
+        //var_dump($user4);
     ?>
 
     <h2>Héritage</h2>
 
     <?php
         include_once("admin.class.php");
-        $admin1 = new Admin("Admin1", "admin1@mail.com", "AMD");
-        var_dump($admin1);
+        $admin = new Admin("Salimatou", "admin1@mail.com", "AMD");
+        echo"<pre>";
+        var_dump($admin);
+        echo"<pre>";
+        $admin->supprimerUser($user2);
     ?>
 </body>
 </html>
